@@ -40,8 +40,6 @@
 
 <h3>1. ResNet34 с Cross Entropy Loss</h3>
 
-<p><a href="https://github.com/me1nna/face-recognition/tree/main/ResNet%20with%20CE">📁 Подробности</a></p>
-
 <ul>
 <li><strong>Модель:</strong> ResNet34 (без предобучения на лицах)</li>
 <li><strong>Loss функция:</strong> Cross Entropy</li>
@@ -51,12 +49,10 @@
 
 <h3>2. ArcFace Loss Implementation</h3>
 
-<p><a href="https://github.com/me1nna/face-recognition/tree/main/ArcFace">📁 Подробности</a></p>
-
 <ul>
 <li><strong>Модель:</strong> ResNet34 в качестве экстрактора признаков</li>
 <li><strong>Loss функция:</strong> ArcFace (Additive Angular Margin Loss)</li>
-<li><strong>Результат:</strong> Test Accuracy &gt; 0.8 (+14% улучшение)</li>
+<li><strong>Результат:</strong> Test Accuracy &gt; 0.8 (+10% улучшение)</li>
 <li><strong>Преимущества:</strong> 
 
 <ul>
@@ -68,18 +64,13 @@
 
 <h2>📁 Структура проекта</h2>
 
-<pre><code>face-recognition/
-├── ResNet with CE/          # Базовая реализация с Cross Entropy
-│   ├── model.py            # Архитектура модели
-│   ├── train.py            # Скрипт обучения
-│   └── evaluate.py         # Оценка качества
+<pre><code>.
 ├── ArcFace/                # Реализация ArcFace loss
-│   ├── arcface_loss.py     # Реализация ArcFace функции потерь
-│   ├── model.py            # Модель с ArcFace
-│   ├── train.py            # Обучение с ArcFace
-│   └── visualization/      # Визуализация эмбеддингов
-├── data/                   # Данные и preprocessing
-├── utils/                  # Вспомогательные функции
+│   ├── arcface.ipynb       # Jupyter notebook с реализацией ArcFace
+│   └── model_weights2.pth  # Веса обученной модели с ArcFace
+├── ResNet with CE/         # Базовая реализация с Cross Entropy
+│   ├── ResNet_for_face_rec.ipynb  # Jupyter notebook с ResNet и CE
+│   └── model_weights1.pth  # Веса обученной модели с Cross Entropy
 └── README.md
 </code></pre>
 
@@ -137,7 +128,7 @@
 <td>Улучшенный</td>
 <td>ArcFace</td>
 <td>&gt; 0.80</td>
-<td><strong>+14%</strong></td>
+<td><strong>+10%</strong></td>
 </tr>
 </tbody>
 </table>
@@ -148,16 +139,13 @@
 git clone https://github.com/me1nna/face-recognition.git
 cd face-recognition
 
-# Установка зависимостей
-pip install -r requirements.txt
-
 # Запуск базовой модели (Cross Entropy)
 cd "ResNet with CE"
-python train.py
+jupyter notebook ResNet_for_face_rec.ipynb
 
 # Запуск модели с ArcFace
 cd ../ArcFace
-python train.py
+jupyter notebook arcface.ipynb
 </code></pre>
 
 <h2>📚 Использованные подходы</h2>
